@@ -1,0 +1,7 @@
+**/.DS_Store
+**/out
+**/dist
+**/node_modules
+**/*.vsix
+**/node_modules/
+**/package-lock.json

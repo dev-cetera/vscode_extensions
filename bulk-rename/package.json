@@ -1,0 +1,58 @@
+{
+  "name": "bulk-rename",
+  "displayName": "Bulk Rename",
+  "description": "An extension that allows you to quickly bulk-rename files and folders within a specific directory.",
+  "publisher": "dev-cetera",
+  "version": "0.1.0",
+  "engines": {
+    "vscode": "^1.87.0"
+  },
+  "icon": "icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dev-cetera/vscode_extensions.git"
+  },
+  "categories": [
+    "Other"
+  ],
+  "main": "./out/extension.js",
+  "activationEvents": [
+    "*"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "bulk-rename.start",
+        "title": "Bulk Rename Contents..."
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "bulk-rename.start",
+          "when": "explorerResourceIsFolder",
+          "group": "5_cutcopypaste@1"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.87.0",
+    "@types/glob": "^8.1.0",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "18.x",
+    "eslint": "^8.34.0",
+    "glob": "^8.1.0",
+    "mocha": "^10.2.0",
+    "typescript": "^5.0.0",
+    "@vscode/test-electron": "^2.3.0"
+  }
+}
