@@ -7,7 +7,3 @@
 ## [0.1.0]
 
 - Initial release.
-
-## [0.2.1]
-
-- Current release.
