@@ -3,7 +3,7 @@
   "displayName": "Bulk Rename by Dev-Cetera",
   "description": "An extension that allows you to quickly bulk-rename files and folders within a specific directory.",
   "publisher": "dev-cetera",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "engines": {
     "vscode": "^1.87.0"
   },

@@ -18,10 +18,13 @@ npm install
 npm install -g vsce
 ```
 
-### Logging in to vsce
+### Publishing
+
+Obtain a Personal Access Token here: https://dev.azure.com/dev-cetera/_usersSettings/tokens.
 
 ```zsh
 vsce login dev-cetera
+vsce publish
 ```
 
 ### Packaging

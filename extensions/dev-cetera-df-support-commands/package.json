@@ -3,7 +3,7 @@
   "displayName": "DF Support Commands by Dev-Cetera",
   "description": "Adds right-click commands to support Dev-Cetera's Dart/Flutter packages.",
   "publisher": "dev-cetera",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "engines": {
     "vscode": "^1.87.0"
   },
