@@ -21,7 +21,7 @@ vsce login robmllze
 ### Packaging
 
 ```zsh
-cd XXX
+cd extensions/XXX
 npm install -g vsce
 vsce package
 ```

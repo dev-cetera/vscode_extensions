@@ -42,12 +42,12 @@ export function activate(context: vscode.ExtensionContext) {
   });
 
   const generateScreenBindingsCommand = vscode.commands.registerCommand('df-support-commands.df_generate_screen_bindings', (uri?: vscode.Uri) => {
-    const command = 'dart pub global activate df_generate_screen && df_generate_screen bindings';
+    const command = 'dart pub global activate df_generate_screen && df_generate_screen_bindings';
     runCommandInFolder(uri, command, 'df_generate_screen_bindings');
   });
 
   const generateScreenAccessCommand = vscode.commands.registerCommand('df-support-commands.df_generate_screen_access', (uri?: vscode.Uri) => {
-    const command = 'dart pub global activate df_generate_screen && df_generate_screen access';
+    const command = 'dart pub global activate df_generate_screen && df_generate_screen_access';
     runCommandInFolder(uri, command, 'df_generate_screen_access');
   });
 

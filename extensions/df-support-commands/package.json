@@ -27,12 +27,12 @@
         "title": "🇧 Generate Dart Barrel File"
       },
       {
-        "command": "df-support-commands.df_generate_dart_models",
+        "command": "df-support-commands.df_generate_dart_models_minimal",
         "title": "🇲 Generate Dart Models"
       },
       {
-        "command": "df-support-commands.df_generate_dart_models_minimal",
-        "title": "🇲 Generate Dart Models (Minimal)"
+        "command": "df-support-commands.df_generate_dart_models",
+        "title": "🇲 Generate Dart Models (Featured)"
       },
       {
         "command": "df-support-commands.df_generate_header_comments",
