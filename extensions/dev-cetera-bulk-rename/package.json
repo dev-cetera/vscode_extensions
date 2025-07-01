@@ -1,6 +1,6 @@
 {
   "name": "dev-cetera-bulk-rename",
-  "displayName": "Bulk Rename",
+  "displayName": "Bulk Rename by Dev-Cetera",
   "description": "An extension that allows you to quickly bulk-rename files and folders within a specific directory.",
   "publisher": "dev-cetera",
   "version": "0.1.0",

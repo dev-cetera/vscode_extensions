@@ -21,7 +21,7 @@ npm install -g vsce
 ### Logging in to vsce
 
 ```zsh
-vsce login robmllze
+vsce login dev-cetera
 ```
 
 ### Packaging
@@ -34,4 +34,4 @@ vsce package
 
 ### Managing personal access tokens
 
-See: https://dev.azure.com/robmllze/_usersSettings/tokens
+See: https://dev.azure.com/dev-cetera/_usersSettings/tokens

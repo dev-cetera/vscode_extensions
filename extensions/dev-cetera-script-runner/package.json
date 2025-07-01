@@ -1,6 +1,6 @@
 {
   "name": "dev-cetera-script-runner",
-  "displayName": "Script Runner",
+  "displayName": "Script Runner by Dev-Cetera",
   "description": "An extension that allows you to run scripts and build commands via right-click.",
   "publisher": "dev-cetera",
   "version": "0.1.0",
