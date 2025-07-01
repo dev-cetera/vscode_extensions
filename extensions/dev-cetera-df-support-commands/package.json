@@ -24,7 +24,7 @@
   "contributes": {
     "commands": [
       {
-        "command": "df-support-commands.df_generate_dart_indexes",
+        "command": "df-support-commands.df_generate_dart_barrel",
         "title": "🔹 Generate Dart Barrel File"
       },
       {
@@ -33,7 +33,7 @@
       },
       {
         "command": "df-support-commands.df_generate_dart_models",
-        "title": "🔹 Generate Dart Models (Featured)"
+        "title": "🔹 Generate Dart Models"
       },
       {
         "command": "df-support-commands.df_generate_header_comments",
@@ -56,7 +56,7 @@
       "explorer/context": [
         {
           "when": "explorerResourceIsFolder",
-          "command": "df-support-commands.df_generate_dart_indexes",
+          "command": "df-support-commands.df_generate_dart_barrel",
           "group": "9_zcommands@1"
         },
         {

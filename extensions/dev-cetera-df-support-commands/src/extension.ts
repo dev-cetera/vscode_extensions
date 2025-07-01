@@ -21,9 +21,9 @@ const TERMINAL_NAME = 'DF Support Commands Terminal';
 
 export function activate(context: vscode.ExtensionContext) {
   
-  const generateDartIndexesCommand = vscode.commands.registerCommand('df-support-commands.df_generate_dart_indexes', (uri?: vscode.Uri) => {
-    const command = 'dart pub global activate df_generate_dart_indexes && df_generate_dart_indexes';
-    runCommandInFolder(uri, command, 'df_generate_dart_indexes');
+  const generateDartIndexesCommand = vscode.commands.registerCommand('df-support-commands.df_generate_dart_barrel', (uri?: vscode.Uri) => {
+    const command = 'dart pub global activate df_generate_dart_indexes && df_generate_dart_barrel';
+    runCommandInFolder(uri, command, 'df_generate_dart_barrel');
   });
 
   const generateDartModelsCommand = vscode.commands.registerCommand('df-support-commands.df_generate_dart_models', (uri?: vscode.Uri) => {
@@ -36,8 +36,25 @@ export function activate(context: vscode.ExtensionContext) {
     runCommandInFolder(uri, command, 'df_generate_dart_models --template=minimal');
   });
 
-  const generateHeaderCommentsCommand = vscode.commands.registerCommand('df-support-commands.df_generate_header_comments', (uri?: vscode.Uri) => {
-    const command = 'dart pub global activate df_generate_header_comments && df_generate_header_comments';
+  const generateHeaderCommentsCommand = vscode.commands.registerCommand('df-support-commands.df_generate_header_comments', async (uri?: vscode.Uri) => {
+    const template = await vscode.window.showInputBox({
+      prompt: 'Enter template path (e.g. "header_template.dart.md"):',
+      placeHolder: 'header_template.dart.md',
+      validateInput: (text: string) => {
+        if (!text || text.trim().length === 0) {
+          return 'Template path cannot be empty!';
+        }
+        if (/\s/.test(text)) {
+          return 'Screen name cannot contain spaces!';
+        }
+        return null;
+      },
+    });
+    if (!template) {
+      console.log('User cancelled the template input.');
+      return;
+    }
+    const command = `dart pub global activate df_generate_header_comments && df_generate_header_comments -t ${template}`;
     runCommandInFolder(uri, command, 'df_generate_header_comments');
   });
 
@@ -53,7 +70,7 @@ export function activate(context: vscode.ExtensionContext) {
 
   const generateScreenCommand = vscode.commands.registerCommand('df-support-commands.df_generate_screen', async (uri?: vscode.Uri) => {
     const screenName = await vscode.window.showInputBox({
-      prompt: 'Enter screen name (e.g., LoginScreen):',
+      prompt: 'Enter screen name (e.g., "RandomScreen"):',
       placeHolder: 'RandomScreen',
       validateInput: (text: string) => {
         if (!text || text.trim().length === 0) {
