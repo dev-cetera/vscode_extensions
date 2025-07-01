@@ -1,0 +1,106 @@
+{
+  "name": "df-support-commands",
+  "displayName": "DF Support Commands",
+  "description": "Adds right-click commands to support Dev-Cetera's Dart/Flutter packages.",
+  "publisher": "dev-cetera",
+  "version": "0.1.0",
+  "engines": {
+    "vscode": "^1.87.0"
+  },
+  "icon": "icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dev-cetera/vscode_extensions.git"
+  },
+  "categories": [
+    "Programming Languages",
+    "Other"
+  ],
+  "activationEvents": [
+    "*"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "df-support-commands.df_generate_dart_indexes",
+        "title": "🇧 Generate Dart Barrel File"
+      },
+      {
+        "command": "df-support-commands.df_generate_dart_models",
+        "title": "🇲 Generate Dart Models"
+      },
+      {
+        "command": "df-support-commands.df_generate_dart_models_minimal",
+        "title": "🇲 Generate Dart Models (Minimal)"
+      },
+      {
+        "command": "df-support-commands.df_generate_header_comments",
+        "title": "🇭 Generate Header Comments"
+      },
+      {
+        "command": "df-support-commands.df_generate_screen_bindings",
+        "title": "🇧 Generate Screen Bindings"
+      },
+      {
+        "command": "df-support-commands.df_generate_screen_access",
+        "title": "🇦 Generate Screen Access"
+      },
+      {
+        "command": "df-support-commands.df_generate_screen",
+        "title": "🇸 Generate Screen"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "when": "explorerResourceIsFolder",
+          "command": "df-support-commands.df_generate_dart_indexes",
+          "group": "9_zcommands@1"
+        },
+        {
+          "when": "explorerResourceIsFolder",
+          "command": "df-support-commands.df_generate_dart_models",
+          "group": "9_zcommands@1"
+        },
+        {
+          "when": "explorerResourceIsFolder",
+          "command": "df-support-commands.df_generate_dart_models_minimal",
+          "group": "9_zcommands@1"
+        },
+        {
+          "when": "explorerResourceIsFolder",
+          "command": "df-support-commands.df_generate_header_comments",
+          "group": "9_zcommands@1"
+        },
+        {
+          "when": "explorerResourceIsFolder",
+          "command": "df-support-commands.df_generate_screen_bindings",
+          "group": "9_zcommands@1"
+        },
+        {
+          "when": "explorerResourceIsFolder",
+          "command": "df-support-commands.df_generate_screen_access",
+          "group": "9_zcommands@1"
+        },
+        {
+        "command": "df-support-commands.df_generate_screen",
+        "title": "🇸 Generate Screen"
+      }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint . --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.87.0",
+    "@types/node": "18.x",
+    "typescript": "^5.1.3"
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "name": "run-script",
+  "displayName": "Run Script",
+  "description": "An extension that allows you to run scripts and build commands via right-click.",
+  "publisher": "dev-cetera",
+  "version": "0.1.0",
+  "engines": {
+    "vscode": "^1.87.0"
+  },
+  "icon": "icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dev-cetera/vscode_extensions.git"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "activationEvents": [
+    "*"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "run-script.execute",
+        "title": "🇷 Run Script"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "when": "resourceScheme == 'file'",
+          "command": "run-script.execute",
+          "group": "9_zcommands@1"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Run Script",
+      "properties": {
+        "run-script.commands": {
+          "description": "File extension to command mapping. Use placeholders: ${file}, ${dir}, ${fileName}, ${fileNoExt}, ${workspaceRoot}",
+          "type": "object",
+          "default": {
+            ".py": "python \"${file}\"",
+            ".js": "node \"${file}\"",
+            ".ts": "ts-node \"${file}\"",
+            ".sh": "bash \"${file}\"",
+            ".ps1": "pwsh -File \"${file}\"",
+            ".php": "php \"${file}\"",
+            ".go": "go run \"${file}\"",
+            ".rb": "ruby \"${file}\"",
+            ".dart": "dart run \"${file}\"",
+            ".lua": "lua \"${file}\"",
+            ".pl": "perl \"${file}\"",
+            ".groovy": "groovy \"${file}\"",
+            ".r": "Rscript \"${file}\"",
+            ".swift": "swift \"${file}\"",
+            ".jl": "julia \"${file}\"",
+            ".scala": "scala \"${file}\"",
+            ".zsh": "zsh \"${file}\"",
+            ".cs": "dotnet run --project \"${dir}\"",
+            ".java": "javac \"${file}\" && java -cp \"${dir}\" \"${fileNoExt}\"",
+            ".rs": "cargo script \"${file}\"",
+            ".c": "gcc \"${file}\" -o \"${dir}/${fileNoExt}_c\" && \"${dir}/${fileNoExt}_c\" && rm \"${dir}/${fileNoExt}_c\"",
+            ".cpp": "g++ \"${file}\" -o \"${dir}/${fileNoExt}_cpp\" && \"${dir}/${fileNoExt}_cpp\" && rm \"${dir}/${fileNoExt}_cpp\""
+          }
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.1",
+    "@types/node": "^18.19.13",
+    "@types/vscode": "^1.87.0",
+    "@typescript-eslint/eslint-plugin": "^6.4.1",
+    "@typescript-eslint/parser": "^6.4.1",
+    "eslint": "^8.47.0",
+    "glob": "^10.3.3",
+    "mocha": "^10.2.0",
+    "typescript": "^5.1.3"
+  },
+  "overrides": {
+    "lru-cache": "^10.2.0"
+  }
+}

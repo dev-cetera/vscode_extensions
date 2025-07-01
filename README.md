@@ -7,6 +7,7 @@ Extensions for Visual Studio Code to boost productivity.
 ### Installing dependencies
 
 ```zsh
+rm -rf node_modules
 npm install
 npm install -g vsce
 ```
@@ -20,7 +21,7 @@ vsce login robmllze
 ### Packaging
 
 ```zsh
-cd bulk-rename
+cd XXX
 npm install -g vsce
 vsce package
 ```

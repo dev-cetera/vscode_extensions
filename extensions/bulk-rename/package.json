@@ -23,7 +23,7 @@
     "commands": [
       {
         "command": "bulk-rename.start",
-        "title": "Bulk Rename Contents..."
+        "title": "🇧 Create BULK_RENAME.txt"
       }
     ],
     "menus": {
@@ -31,7 +31,7 @@
         {
           "command": "bulk-rename.start",
           "when": "explorerResourceIsFolder",
-          "group": "5_cutcopypaste@1"
+          "group": "9_zcommands@1"
         }
       ]
     }
@@ -52,7 +52,6 @@
     "eslint": "^8.34.0",
     "glob": "^8.1.0",
     "mocha": "^10.2.0",
-    "typescript": "^5.0.0",
-    "@vscode/test-electron": "^2.3.0"
+    "typescript": "^5.0.0"
   }
 }
