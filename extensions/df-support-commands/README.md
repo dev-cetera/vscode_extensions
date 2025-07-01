@@ -11,7 +11,7 @@ An extension to support the follwing Dart packages:
 
 1. Open VS Code.
 2. Go to the Extensions view by clicking on the square icon on the sidebar or pressing `Ctrl+Shift+X` on Windows or `Cmd+Shift+X` on MacOS.
-3. Search for "Run Script".
+3. Search for "Script Runner".
 4. Install and reload VS Code.
 5. This extension is activated by default. Disable the extension to deactivate it.
 

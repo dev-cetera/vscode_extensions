@@ -15,31 +15,31 @@ import * as path from 'path';
 
 // ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
 
-const TERMINAL_NAME = 'Run Script Terminal';
+const TERMINAL_NAME = 'Script Runner Terminal';
 
 // ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
 
 export function activate(context: vscode.ExtensionContext) {
-  const disposable = vscode.commands.registerCommand('run-script.execute', async (uri?: vscode.Uri) => {
+  const disposable = vscode.commands.registerCommand('script-runner.execute', async (uri?: vscode.Uri) => {
     if (!uri) {
       if (vscode.window.activeTextEditor) {
         uri = vscode.window.activeTextEditor.document.uri;
       } else {
-        vscode.window.showErrorMessage('Run Script: No file selected or open to run.');
+        vscode.window.showErrorMessage('Script Runner: No file selected or open to run.');
         return;
       }
     }
     const filePath = uri.fsPath;
     const fileExtension = path.extname(filePath).toLowerCase();
-    const config = vscode.workspace.getConfiguration('run-script');
+    const config = vscode.workspace.getConfiguration('script-runner');
     const commands = config.get<{ [key: string]: string }>('commands');
     if (!commands || typeof commands !== 'object') {
-      vscode.window.showErrorMessage('Run Script: Configuration for "run-script.commands" is missing or invalid.');
+      vscode.window.showErrorMessage('Script Runner: Configuration for "script-runner.commands" is missing or invalid.');
       return;
     }
     const commandTemplate = commands[fileExtension];
     if (!commandTemplate) {
-      vscode.window.showWarningMessage(`Run Script: No command found for "${fileExtension}" files. Please configure it in your settings.`);
+      vscode.window.showWarningMessage(`Script Runner: No command found for "${fileExtension}" files. Please configure it in your settings.`);
       return;
     }
     const fileInfo = {

@@ -1,5 +1,5 @@
 {
-  "name": "df-support-commands",
+  "name": "dev-cetera-df-support-commands",
   "displayName": "DF Support Commands",
   "description": "Adds right-click commands to support Dev-Cetera's Dart/Flutter packages.",
   "publisher": "dev-cetera",
