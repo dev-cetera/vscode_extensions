@@ -13,23 +13,25 @@
     "url": "https://github.com/dev-cetera/vscode_extensions.git"
   },
   "categories": [
-    "Programming Languages"
+    "Programming Languages",
+    "Formatters",
+    "Other"
   ],
   "activationEvents": [
-    "*"
+    "onView:explorer"
   ],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
       {
         "command": "run-script.execute",
-        "title": "🇷 Run Script"
+        "title": "🔸 Run Script"
       }
     ],
     "menus": {
       "explorer/context": [
         {
-          "when": "resourceScheme == 'file'",
+          "when": "!explorerResourceIsFolder",
           "command": "run-script.execute",
           "group": "9_zcommands@1"
         }

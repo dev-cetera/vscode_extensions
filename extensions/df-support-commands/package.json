@@ -14,41 +14,42 @@
   },
   "categories": [
     "Programming Languages",
+    "Formatters",
     "Other"
   ],
   "activationEvents": [
-    "*"
+     "onView:explorer"
   ],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
       {
         "command": "df-support-commands.df_generate_dart_indexes",
-        "title": "🇧 Generate Dart Barrel File"
+        "title": "🔹 Generate Dart Barrel File"
       },
       {
         "command": "df-support-commands.df_generate_dart_models_minimal",
-        "title": "🇲 Generate Dart Models"
+        "title": "🔹 Generate Dart Models (Minimal)"
       },
       {
         "command": "df-support-commands.df_generate_dart_models",
-        "title": "🇲 Generate Dart Models (Featured)"
+        "title": "🔹 Generate Dart Models (Featured)"
       },
       {
         "command": "df-support-commands.df_generate_header_comments",
-        "title": "🇭 Generate Header Comments"
+        "title": "🔹 Generate Header Comments"
       },
       {
         "command": "df-support-commands.df_generate_screen_bindings",
-        "title": "🇧 Generate Screen Bindings"
+        "title": "🔹 Generate Screen Bindings"
       },
       {
         "command": "df-support-commands.df_generate_screen_access",
-        "title": "🇦 Generate Screen Access"
+        "title": "🔹 Generate Screen Access"
       },
       {
         "command": "df-support-commands.df_generate_screen",
-        "title": "🇸 Generate Screen"
+        "title": "🔹 Generate Screen"
       }
     ],
     "menus": {
@@ -60,33 +61,34 @@
         },
         {
           "when": "explorerResourceIsFolder",
+          "command": "df-support-commands.df_generate_header_comments",
+          "group": "9_zcommands@2"
+        },
+        {
+          "when": "explorerResourceIsFolder",
           "command": "df-support-commands.df_generate_dart_models",
-          "group": "9_zcommands@1"
+          "group": "9_zcommands@3"
         },
         {
           "when": "explorerResourceIsFolder",
           "command": "df-support-commands.df_generate_dart_models_minimal",
-          "group": "9_zcommands@1"
+          "group": "9_zcommands@4"
         },
         {
           "when": "explorerResourceIsFolder",
-          "command": "df-support-commands.df_generate_header_comments",
-          "group": "9_zcommands@1"
+          "command": "df-support-commands.df_generate_screen",
+          "group": "9_zcommands@5"
         },
         {
           "when": "explorerResourceIsFolder",
           "command": "df-support-commands.df_generate_screen_bindings",
-          "group": "9_zcommands@1"
+          "group": "9_zcommands@6"
         },
         {
           "when": "explorerResourceIsFolder",
           "command": "df-support-commands.df_generate_screen_access",
-          "group": "9_zcommands@1"
-        },
-        {
-        "command": "df-support-commands.df_generate_screen",
-        "title": "🇸 Generate Screen"
-      }
+          "group": "9_zcommands@7"
+        }
       ]
     }
   },
