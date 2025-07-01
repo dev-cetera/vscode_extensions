@@ -13,7 +13,7 @@ An extension that allows you to run scripts via right-click.
 ## Instructions
 
 1. Right click on a file in the explorer.
-2. Select `⚫ Run Script` from the context menu.
+2. Select `🔸 Run Script` from the context menu.
 3. The script will run in the terminal.
 
 ## License
