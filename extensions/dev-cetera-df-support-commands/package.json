@@ -33,7 +33,7 @@
       },
       {
         "command": "df-support-commands.df_generate_dart_models",
-        "title": "🔹 Generate Dart Models"
+        "title": "🔹 Generate Dart Models (BETA)"
       },
       {
         "command": "df-support-commands.df_generate_header_comments",
@@ -41,15 +41,15 @@
       },
       {
         "command": "df-support-commands.df_generate_screen_bindings",
-        "title": "🔹 Generate Screen Bindings"
+        "title": "🔹 Generate Screen Bindings (BETA)"
       },
       {
         "command": "df-support-commands.df_generate_screen_access",
-        "title": "🔹 Generate Screen Access"
+        "title": "🔹 Generate Screen Access (BETA)"
       },
       {
         "command": "df-support-commands.df_generate_screen",
-        "title": "🔹 Generate Screen"
+        "title": "🔹 Generate Screen (BETA)"
       }
     ],
     "menus": {
