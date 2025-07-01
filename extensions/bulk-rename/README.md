@@ -19,17 +19,12 @@ Bulk-renaming files can break your project if you're not careful. Be sure to try
 1. Open a a workspace in Visual Studio Code.
 2. Save your project.
 3. Right-click in the Explorer view.
-4. Select `⚫ New BULK_RENAME.txt here` from the context menu.
+4. Select `🔸 Create BULK_RENAME.txt` from the context menu.
 5. A file named `.BULK_RENAME.txt` will be created in the root of the workspace.
 6. Open `.BULK_RENAME.txt`, and rename the files or folders as needed (Tip: Press `Ctrl+F` (Windows/Linux) or `Cmd+F` (MacOS) to search for the files or folders if there are too many).
 7. Save the file (Tip: Enable auto-save in Visual Studio Code).
 8. The files and folders will be renamed accordingly and `.BULK_RENAME.txt` will update.
 9. Files or folders staring with a dot "." will be ignored.
-
-## Known Issues
-
-- Currently no folders or files are ignored, except files of folders starting with a dot ".". So if you have a "node_modules" folder for example, all those files and folders will appear in "BULK_RENAME.txt". For now, press `Ctrl+F` (Windows/Linux) or `Cmd+F` (MacOS) to search for the files or folders if there are too many.
-- There is currently no way to stop the process once started, unless you close and reopen Visual Studio Code. Luckily it's not really disruptive.
 
 ## License
 

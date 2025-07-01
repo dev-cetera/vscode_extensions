@@ -25,7 +25,7 @@
     "commands": [
       {
         "command": "bulk-rename.start",
-        "title": "🔸 Create BULK_RENAME.txt"
+        "title": "🔸 Create .BULK_RENAME.txt"
       }
     ],
     "menus": {

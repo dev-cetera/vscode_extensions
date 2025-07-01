@@ -2,7 +2,13 @@
 
 Extensions for Visual Studio Code to boost productivity.
 
-## Developer
+## Index
+
+1. [Run Script](#run-script)
+2. [Bulk Rename](#bulk-rename)
+3. [DF Support Commands](#df-support-commands)
+
+## Developer Notes
 
 ### Installing dependencies
 
