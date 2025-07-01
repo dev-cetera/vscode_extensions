@@ -1,8 +1,23 @@
+//.title
+// ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+//
+// VS Code Extensions by dev-cetera.com & contributors. The use of this
+// source code is governed by an MIT-style license described in the LICENSE
+// file located in this project's root directory.
+//
+// See: https://opensource.org/license/mit
+//
+// ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+//.title~
+
 import * as vscode from 'vscode';
 import * as path from 'path';
 
-// A dedicated name for the terminal to reuse it
-const TERMINAL_NAME = 'Dart Code Generator';
+// ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+
+const TERMINAL_NAME = 'DF Support Commands Terminal';
+
+// ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
 
 export function activate(context: vscode.ExtensionContext) {
   
@@ -59,7 +74,6 @@ export function activate(context: vscode.ExtensionContext) {
   });
 
 
-  // Add both commands to the extension's subscriptions
   context.subscriptions.push(
     generateDartIndexesCommand,
     generateDartModelsCommand,
@@ -71,41 +85,29 @@ export function activate(context: vscode.ExtensionContext) {
   );
 }
 
-/**
- * A helper function to run a command in the context of a selected folder.
- * @param uri The URI of the folder right-clicked by the user.
- * @param commandToRun The exact shell command to execute.
- * @param taskName A user-friendly name for the task for display messages.
- */
+// ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+
 async function runCommandInFolder(uri: vscode.Uri | undefined, commandToRun: string, taskName: string) {
   if (!uri) {
     vscode.window.showErrorMessage(`[${taskName}] This command must be run by right-clicking a folder.`);
     return;
   }
-
   const folderPath = uri.fsPath;
   console.log(`[${taskName}] Target folder: ${folderPath}`);
-  
   try {
-    // Find or create a terminal instance for our task
     let terminal = vscode.window.terminals.find(t => t.name === TERMINAL_NAME);
     if (!terminal || terminal.exitStatus !== undefined) {
       terminal = vscode.window.createTerminal(TERMINAL_NAME);
     }
-    
     terminal.show();
-    
-    // Change directory to the target folder, quoting the path to handle spaces
     terminal.sendText(`cd "${folderPath}"`);
-
-    // Run the actual command
     terminal.sendText(commandToRun);
-
     vscode.window.showInformationMessage(`Running '${taskName}' in "${path.basename(folderPath)}"... See terminal for output.`);
-
   } catch (error) {
     vscode.window.showErrorMessage(`Failed to run '${taskName}'. Error: ${error instanceof Error ? error.message : String(error)}`);
   }
 }
+
+// ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
 
 export function deactivate() {}
