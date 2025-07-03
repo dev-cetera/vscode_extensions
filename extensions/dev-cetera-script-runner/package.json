@@ -3,7 +3,7 @@
   "displayName": "Script Runner by Dev-Cetera",
   "description": "An extension that allows you to run scripts and build commands via right-click.",
   "publisher": "dev-cetera",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "engines": {
     "vscode": "^1.87.0"
   },
@@ -44,6 +44,7 @@
           "description": "File extension to command mapping. Use placeholders: ${file}, ${dir}, ${fileName}, ${fileNoExt}, ${workspaceRoot}",
           "type": "object",
           "default": {
+            ".py3": "python3 \"${file}\"",
             ".py": "python \"${file}\"",
             ".js": "node \"${file}\"",
             ".ts": "ts-node \"${file}\"",
