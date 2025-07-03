@@ -43,11 +43,11 @@ export function activate(context: vscode.ExtensionContext) {
       return;
     }
     const fileInfo = {
-      file: `"${filePath}"`,
-      dir: `"${path.dirname(filePath)}"`,
-      fileName: `"${path.basename(filePath)}"`,
-      fileNoExt: `"${path.basename(filePath, fileExtension)}"`,
-      workspaceRoot: `"${vscode.workspace.getWorkspaceFolder(uri)?.uri.fsPath || path.dirname(filePath)}"`,
+      file: filePath,
+      dir: path.dirname(filePath),
+      fileName: path.basename(filePath),
+      fileNoExt: path.basename(filePath, fileExtension),
+      workspaceRoot: vscode.workspace.getWorkspaceFolder(uri)?.uri.fsPath || path.dirname(filePath),
     };
     const finalCommand = commandTemplate.replace(
       /\${(file|dir|fileName|fileNoExt|workspaceRoot)}/g,
